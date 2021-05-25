@@ -3,12 +3,12 @@ FROM golang:1.16.3 AS builder
 WORKDIR /kine
 COPY . .
 ENV GO111MODULE=on
-RUN go build -o kine
+RUN ./scripts/build
 
-FROM alpine:3.13.4
+FROM alpine:latest
 
 WORKDIR /
 
-COPY --from=builder /kine/kine /bin/kine
+COPY --from=builder /kine/bin/kine /bin/kine
 
-ENTRYPOINT [ "/bin/kine" ]
+CMD [ "/bin/kine" ]
