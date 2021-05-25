@@ -11,4 +11,6 @@ WORKDIR /
 
 COPY --from=builder /kine/bin/kine /bin/kine
 
+EXPOSE 2379
+
 CMD [ "/bin/kine" ]
