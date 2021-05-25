@@ -10,3 +10,5 @@ FROM alpine:3.13.4
 WORKDIR /
 
 COPY --from=builder /kine/kine /bin/kine
+
+ENTRYPOINT [ "/bin/kine" ]
