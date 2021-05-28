@@ -15,7 +15,7 @@ import (
 
 const (
 	compactInterval  = 5 * time.Minute
-	compactTimeout   = 5 * time.Second
+	compactTimeout   = 30 * time.Second
 	compactMinRetain = 1000
 	compactBatchSize = 1000
 	pollBatchSize    = 500
