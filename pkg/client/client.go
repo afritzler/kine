@@ -41,7 +41,7 @@ func New(config endpoint.ETCDConfig) (Client, error) {
 
 	c, err := clientv3.New(clientv3.Config{
 		Endpoints:   config.Endpoints,
-		DialTimeout: 5 * time.Second,
+		DialTimeout: 30 * time.Second,
 		TLS:         tlsConfig,
 	})
 	if err != nil {
